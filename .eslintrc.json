@@ -1,0 +1,221 @@
+{
+   "root": true,
+   "ignorePatterns": ["projects/**/*"],
+   "overrides": [
+      {
+         "files": ["*.ts"],
+         "parser": "@typescript-eslint/parser",
+         "parserOptions": {
+            "project": ["tsconfig.json", "tsconfig.e2e.json"],
+            "createDefaultProgram": true
+         },
+         "extends": [
+            "prettier",
+            "plugin:@angular-eslint/ng-cli-compat",
+            "plugin:@angular-eslint/ng-cli-compat--formatting-add-on",
+            "plugin:@angular-eslint/template/process-inline-templates",
+            "plugin:import/recommended"
+         ],
+         "plugins": ["prettier", "eslint-plugin-react", "jsdoc", "eslint-plugin-tsdoc", "ban", "unused-imports", "deprecation"],
+         "rules": {
+            "@typescript-eslint/consistent-type-definitions": "error",
+            "@typescript-eslint/dot-notation": "off",
+            "@typescript-eslint/explicit-member-accessibility": [
+               "error",
+               {
+                  "accessibility": "explicit"
+               }
+            ],
+            "@typescript-eslint/member-ordering": [
+               "error",
+               {
+                  "default": [
+                     "static-field",
+                     "static-method",
+                     "public-instance-field",
+                     "public-abstract-field",
+                     "protected-instance-field",
+                     "protected-abstract-field",
+                     "private-instance-field",
+                     "constructor",
+                     "public-instance-method",
+                     "public-abstract-method",
+                     "protected-instance-method",
+                     "protected-abstract-method",
+                     "private-instance-method"
+                  ]
+               }
+            ],
+            "@typescript-eslint/no-empty-function": "error",
+            "@typescript-eslint/no-inferrable-types": [
+               "off",
+               {
+                  "ignoreParameters": true
+               }
+            ],
+            "@typescript-eslint/naming-convention": [
+               "error",
+               {
+                  "selector": "enumMember",
+                  "format": ["PascalCase"]
+               }
+            ],
+            "@typescript-eslint/no-non-null-assertion": "error",
+            "arrow-parens": ["off", "always"],
+            "ban/ban": [
+               "error",
+               {
+                  "name": "fdescribe",
+                  "message": "Do not commit focused tests."
+               },
+               {
+                  "name": "fit",
+                  "message": "Do not commit focused tests."
+               }
+            ],
+            "unused-imports/no-unused-imports": "error",
+            "brace-style": ["error", "1tbs"],
+            "complexity": "error",
+            "import/no-deprecated": "off",
+            "import/no-unresolved": [
+               "error",
+               {
+                  "ignore": ["rxjs"]
+               }
+            ],
+            "import/order": [
+               "error",
+               {
+                  "groups": ["builtin", "external", "internal", ["parent", "sibling"], "index", "object", "type", "unknown"],
+                  "pathGroups": [
+                     {
+                        "pattern": "zone.js",
+                        "group": "external",
+                        "position": "before"
+                     },
+                     {
+                        "pattern": "@myorg/**",
+                        "group": "external",
+                        "position": "after"
+                     }
+                  ],
+                  "pathGroupsExcludedImportTypes": ["builtin"],
+                  "newlines-between": "always",
+                  "alphabetize": {
+                     "order": "asc",
+                     "caseInsensitive": true
+                  }
+               }
+            ],
+            "interface-name": "off",
+            "jsdoc/newline-after-description": "off",
+            "jsdoc/require-jsdoc": [
+               "error",
+               {
+                  "contexts": [
+                     "ClassDeclaration",
+                     "FunctionDeclaration",
+                     "ClassProperty:not([accessibility=\"private\"])",
+                     "MethodDefinition:not([accessibility=\"private\"])",
+                     "Constructor > Parameter PublicKeyword"
+                  ]
+               }
+            ],
+            "linebreak-style": "off",
+            "max-len": [
+               "error",
+               {
+                  "code": 200
+               }
+            ],
+            "new-parens": "off",
+            "newline-per-chained-call": "off",
+            "no-alert": "error",
+            "no-console": ["error", {}],
+            "no-empty": "error",
+            "no-extra-semi": "off",
+            "no-irregular-whitespace": "off",
+            "no-magic-numbers": "off",
+            "no-restricted-imports": [
+               "error",
+               {
+                  "patterns": ["**/public-api", "**/public_api", "rxjs/Rx", "projects/**", "decimal.js"]
+               }
+            ],
+            "no-restricted-syntax": [
+               "error",
+               {
+                  "selector": "ClassProperty[definite=\"true\"]",
+                  "message": "Non-null assertion on properties is not allowed."
+               }
+            ],
+            "quote-props": "off",
+            "prefer-arrow/prefer-arrow-functions": [
+               "error",
+               {
+                  "allowStandaloneDeclarations": true
+               }
+            ],
+            "prettier/prettier": "error",
+            "radix": "off",
+            "react/jsx-curly-spacing": "off",
+            "react/jsx-equals-spacing": "off",
+            "react/jsx-tag-spacing": [
+               "off",
+               {
+                  "afterOpening": "allow",
+                  "closingSlash": "allow"
+               }
+            ],
+            "react/jsx-wrap-multilines": "off",
+            "space-before-function-paren": "off",
+            "space-in-parens": ["off", "never"],
+            "tsdoc/syntax": "warn",
+            "deprecation/deprecation": "warn"
+         },
+         "settings": {
+            "import/parsers": {
+               "@typescript-eslint/parser": [".ts", ".tsx"]
+            },
+            "import/resolver": {
+               "typescript": {
+                  "alwaysTryTypes": true
+               }
+            }
+         }
+      },
+      // NOTE: WE ARE NOT APPLYING PRETTIER IN THIS OVERRIDE, ONLY @ANGULAR-ESLINT/TEMPLATE
+      {
+         "files": ["*.html"],
+         "extends": ["plugin:@angular-eslint/template/recommended"],
+         "rules": {
+            "@angular-eslint/template/eqeqeq": [
+               "error",
+               {
+                  "allowNullOrUndefined": true
+               }
+            ]
+         }
+      },
+      // NOTE: WE ARE NOT APPLYING @ANGULAR-ESLINT/TEMPLATE IN THIS OVERRIDE, ONLY PRETTIER
+      {
+         "files": ["*.html"],
+         "excludedFiles": ["*inline-template-*.component.html", "index.html"],
+         "extends": ["plugin:prettier/recommended"],
+         "rules": {
+            // NOTE: WE ARE OVERRIDING THE DEFAULT CONFIG TO ALWAYS SET THE PARSER TO ANGULAR (SEE BELOW)
+            "prettier/prettier": [
+               "error",
+               {
+                  "parser": "angular"
+               }
+            ]
+         }
+      },
+      {
+         "files": ["*.js", "*.jsx"],
+         "parser": "@typescript-eslint/parser",
+         "rules": {}
+      }
+   ]
+}

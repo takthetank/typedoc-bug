@@ -1,0 +1,46 @@
+{
+   "compileOnSave": false,
+   "compilerOptions": {
+      "baseUrl": "./",
+      "outDir": "./dist/out-tsc",
+      "sourceMap": true,
+      "declaration": false,
+      "module": "ESNext",
+      "esModuleInterop": true,
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "experimentalDecorators": true,
+      "skipLibCheck": true,
+      "noFallthroughCasesInSwitch": true,
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "allowUnreachableCode": false,
+      "allowUnusedLabels": false,
+      "forceConsistentCasingInFileNames": true,
+      "resolveJsonModule": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "noImplicitOverride": true,
+      "noPropertyAccessFromIndexSignature": false,
+      "pretty": true,
+      "target": "ES2022",
+      "plugins": [],
+      "typeRoots": ["node_modules/@types"],
+      "lib": ["ES2021", "DOM"],
+      "paths": {
+         "@myorg/core": ["dist/myorg/core"],
+         "@myorg/core/*": ["dist/myorg/core/*"]
+      },
+      "useDefineForClassFields": false
+   },
+   "angularCompilerOptions": {
+      "enableI18nLegacyMessageIdFormat": false,
+      "strictInjectionParameters": true,
+      "strictInputAccessModifiers": true,
+      "strictTemplates": true,
+      "fullTemplateTypeCheck": true,
+      "strictNullInputTypes": false
+   }
+}

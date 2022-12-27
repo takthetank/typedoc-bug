@@ -1,0 +1,17 @@
+{
+  "name": "@myorg/core",
+  "version": "4.4.7",
+  "description": "MyOrg Angular Core Library",
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "@angular/core": "^15.0.3",
+    "@angular/common": "^15.0.3",
+    "decimal.js": "^10.4.2",
+    "safe-stable-stringify": "^2.4.1",
+    "reflect-metadata": "^0.1.13",
+    "uuid": "^9.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.4.1"
+  }
+}

@@ -1,0 +1,17 @@
+{
+   "extends": "../../../tsconfig.json",
+   "compilerOptions": {
+      "outDir": "../../out-tsc/lib",
+      "declaration": true,
+      "declarationMap": true,
+      "inlineSources": true,
+      "types": ["node"]
+   },
+   "exclude": ["src/test.ts", "**/*.spec.ts"],
+   "typedocOptions": {
+      "excludeExternals": true,
+      "excludePrivate": true,
+      "entryPoints": ["src/public_api.ts"],
+      "out": "../../../dist/myorg/core/docs"
+   }
+}
