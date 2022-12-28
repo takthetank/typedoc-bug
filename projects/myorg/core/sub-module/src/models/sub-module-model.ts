@@ -4,9 +4,9 @@ import { ModelBase } from '@myorg/core';
  * A foo interface.
  */
 export interface IFoo {
-   /** Code */
+   /** The Code property. */
    code: number;
-   /** Name */
+   /** The Name property. */
    name: string;
 }
 
@@ -16,7 +16,7 @@ export interface IFoo {
 export class SubModuleModel extends ModelBase implements IFoo {
    /** {@inheritDoc "<internal>".IFoo.code} */
    public code: number = 0;
-   /** {@inheritDoc "<internal>".IFoo.name} */
+
    public name: string = '';
 
    /**
@@ -31,7 +31,7 @@ export class SubModuleModel extends ModelBase implements IFoo {
       // do stuff
    }
 
-   /** {@inheritDoc "<internal>".ModelBase.someAbstractMethod} */
+   // eslint-disable-next-line jsdoc/require-jsdoc
    public someAbstractMethod(): void {
       // do stuff
    }
