@@ -14,9 +14,9 @@ export interface IFoo {
  * Class that both implements IFoo and extends ModelBase.
  */
 export class SubModuleModel extends ModelBase implements IFoo {
-   /** {@inheritDoc IFoo.code} */
+   /** {@inheritDoc "<internal>".IFoo.code} */
    public code: number = 0;
-   /** {@inheritDoc IFoo.name} */
+   /** {@inheritDoc "<internal>".IFoo.name} */
    public name: string = '';
 
    /**
@@ -26,12 +26,12 @@ export class SubModuleModel extends ModelBase implements IFoo {
       super();
    }
 
-   /** {@inheritDoc ModelBase.someMethod} */
+   /** {@inheritDoc "<internal>".ModelBase.someMethod} */
    public override someMethod(): void {
       // do stuff
    }
 
-   /** {@inheritDoc ModelBase.someAbstractMethod} */
+   /** {@inheritDoc "<internal>".ModelBase.someAbstractMethod} */
    public someAbstractMethod(): void {
       // do stuff
    }
